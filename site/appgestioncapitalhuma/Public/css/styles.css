@@ -1,0 +1,1085 @@
+*,
+*::before,
+*::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html{
+    font-family:'Roboto',sans-serif;
+    font-size:10px;
+}
+
+body{
+    overflow-x: hidden;
+}
+
+a{
+    text-decoration: none;
+}
+
+ul{
+    list-style: none;
+}
+
+header{
+    width:100%;
+    position: absolute;
+    top:0;
+    left: 0;
+}
+
+.container{
+    width: 100%;
+    max-width: 117rem;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+
+.menu-icons{
+    color: #eee;
+    font-size: 4rem;
+    position: absolute;
+    top: 18%;
+    right: 2rem;
+    transform: translate(-50%);
+    cursor: pointer;
+    z-index: 1500;
+    display: none;
+   
+}
+
+nav{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 8rem;
+    border-bottom: 1px solid rgba(255,255,255, .1);
+}
+
+.container .logo{
+    display: flex;
+
+}
+
+.container .logo img{
+    margin: 5px -19px 0px -35px;
+    height: 34vh;
+}
+.nav-list{
+    display: flex;
+    width:100%;
+    align-items: center;
+}
+.nav-list li{
+    line-height: 8rem;
+    position: relative;
+}
+
+.sub-menu li{
+    line-height: 4rem;
+}
+
+.nav-list a{
+    display: block;
+    color: #eee;
+    padding: 0px 1.1rem;
+    font-size: 20px;
+    text-transform: uppercase;
+    transition: color 650ms;
+    font-family: "ITC Caslon No 224",serif;
+}
+
+.nav-list a:hover{
+    color:#03989e;
+}
+
+#inscription1{
+    font-family: "ITC Caslon No 224",serif;
+    font-size: 17px;
+}
+.btn{
+    padding: 1.3rem;
+    display: inline-block;
+    background-color: #03989e;
+    border: 2px solid #03989e;
+    border-radius: 5rem;
+    transition: background-color 650ms;
+}
+
+
+
+.btn:hover{
+    color:#03989e;
+    background-color: rgba(0,0,0,0.2);
+}
+
+.sub-menu{
+    width: 20rem;
+    display: block;
+    position: absolute;
+    border-top: 3px solid #eb3007;
+    background-color: #191919;
+    z-index: 100;
+    top: 16rem;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 650ms ease;
+}
+
+.sub-menu::before{
+    content: "";
+    position: absolute;
+    top: -2.5rem;
+    left: 3rem;
+    border: 1.2rem solid transparent;
+    border-bottom-color: #eb3007; 
+}
+
+.sub-menu .sub-menu::before{
+    top: .9rem;
+    left:-2.5rem;
+    border:1.2rem solid transparent;
+    border-right-color:#eb3007;
+}
+
+.sub-menu .sub-menu{
+    border-top:none;
+    border-left:3px solid #eb3007;
+    top:0;
+    left:160%;
+}
+
+.nav-list li:hover > .sub-menu{
+    top: 8rem;
+    opacity: 1;
+    visibility: visible;
+}
+
+.sub-menu li:hover > .sub-menu{
+    top:0;
+   left:100%;
+}
+
+li.move-right{
+    margin: auto 0 auto auto;
+    line-height: initial;
+}
+li.move-left{
+    margin-left: 10px;
+    line-height: initial;
+}
+
+
+@media screen and (max-width: 1042px){
+    .nav-list {
+        position: fixed;
+        top: 0;
+        left:0;
+        height: 100vh;
+        flex-direction: column;
+        align-items: initial;
+        display: none;
+        background-color: #191919;
+        z-index:1000;  
+        overflow-y: scroll;  
+        
+    }
+
+    .nav-list > li{
+      line-height: 6rem;
+    }
+
+    .sub-menu{
+        position: initial;
+        border: 3px solid transparent;
+        border-left-color: #eb3007;
+        margin-left: 1rem;
+        max-height: 0;
+    }
+
+    .sub-menu::before{
+        display: none;
+    }
+
+    .nav-list li:hover > .sub-menu{
+        opacity: 1;
+        visibility: visible;
+        max-height: initial;
+    }
+
+    li.move-right{
+        margin: 0 10px 0 0;
+        line-height:initial;
+    }
+    
+
+    li.move-left{
+        margin: 10px 10px 0 0;
+        line-height: initial;
+        
+    }
+
+    .menu-icons {
+        display: block;
+    }  
+
+}
+
+@media screen and (max-width: 1025px){
+    .container .logo img {
+        margin: 2px -138px 0px -35px;
+        height: 29vh;
+    }
+
+}
+
+        /*Login And Registration */   
+                          
+  .hero2{
+    height:100%;
+    width: 100%;
+    background-color:rgba(0,0,0,0.7);
+    position: absolute;
+    top: 0;
+    display: flex;
+    background-size: cover;
+    justify-content: center;
+    align-items: center;
+    display: none;   
+}
+.close2{
+    position: absolute;
+    top: 0;
+    right: 14px;
+    font-size: 42px;
+    transform: rotate(45deg);
+    cursor: pointer;
+}
+.from-box2{
+    width:380px;
+    height: 480px;
+    position: relative;
+    border-radius: 4px;
+    margin: 6% auto;
+    background: #fff;
+    padding: 5px;
+    overflow: hidden;
+    
+}
+.button-box2{
+width: 220px;
+margin: 35px auto;
+position: relative;
+box-shadow: 0 0 20px 9px #ff61241f;
+border-radius: 30px;
+}
+.toggle-btn2{
+    padding: 10px 30px;
+    cursor: pointer;
+    background: transparent;
+    border: 0;
+    outline:none;
+    position: relative;
+}
+#btn2{
+    top: 0;
+    left: 0;
+    position: absolute;
+    width: 110px;
+    height: 100%;
+    background: linear-gradient(to right, #03989e, #00f7ff);
+    border-radius: 30px;
+    transition: .5s;
+}
+ img{
+left: 450px;
+text-align: center;
+height: 99px;
+margin: -21px 132px;
+cursor: pointer;
+border-radius: 50%;
+}
+
+.input-group2{
+    top: 180px;
+    position: absolute;
+    width: 280px;
+    transition: .5s;
+}
+.input-field2{
+    width: 100%;
+    padding: 10px 0;
+    margin: 5px 0;
+    border-top:0 ;
+    border-left:0;
+    border-right:0 ;
+    border-bottom: 1px solid #999 ;
+    outline: none;  
+    background: transparent;
+}
+.submit-btn2{
+    width: 85%;
+    padding: 10px 30px;
+    cursor: pointer;
+    display: block;
+    margin: auto;
+    background: linear-gradient(to right, #03989e, #00f7ff);
+    border: 0;
+    outline:none;
+    border-radius: 30px ;
+    margin-top: 6px;
+}
+.check-box2{
+    margin: 30px 10px 30px 0;
+}
+
+.check-box2 span{
+    color: #777;
+    font-size: 12px;
+    bottom: 42px;
+    position: absolute;
+    margin-top: 16px;
+}
+
+#login2{
+    left: 50px;
+}
+#Signin2{
+    left: 450px;
+}                         
+/*end Login And Registration */    
+
+
+                                               /*Login And Registration */  
+
+
+
+
+
+ 
+
+
+
+
+/*End nav css*/
+
+/*Hero*/
+                                    .hero{
+                                        width: 100%;
+                                        height: 100vh;
+                                        background: linear-gradient(to bottom, rgba(0,0,0,0.4),rgba(0,0,0,0.4)),
+                                        url("../img/background.jpg") center no-repeat;
+                                        background-size: cover;
+                                        overflow: hidden;
+                                        
+                                        
+                                    }
+                                                                        /*******************video*****************/
+                                  /*  #herovideo{
+                                        width: 100%;
+                                        height: 100vh;
+                                        background: linear-gradient(to bottom, rgba(0,0,0,0.4),rgba(0,0,0,0.4)),
+                                        url("entreprise.mp4") center no-repeat;
+
+                                    }*/
+                                    /*******************video*****************/
+
+                                    .text{
+                                        width: 100%;
+                                        position: absolute;
+                                        top: 50%;
+                                        left: 50%;
+                                        transform: translate(-50%, -50%);
+                                        color: #eee;
+                                        text-align: center;
+                                        
+                                    }
+                                    
+
+                                    .text h1{
+                                        font-size: 5rem;
+                                        margin: 2rem 0;
+                                        font-weight: bold;
+                                        font-family: "ITC Caslon No 224",serif;
+                                        
+                                    }
+
+                                   /* .text h2{
+                                        font-size: 1.6rem;
+                                        text-transform: uppercase;
+                                        font-weight: 300;
+                                        color: #fff;
+                                    }
+*/
+                                    .text p{
+                                        font-size: 2rem;
+                                        font-weight: bold;
+                                        margin-bottom: 25px;
+                                        color: #eee;
+                                        font-family: "ITC Caslon No 224",serif;
+                                    }
+/* hide boutton learn more
+                                    .text .btn{
+                                        font-size: 1.6rem;
+                                        padding-left: 3rem;
+                                        padding-right: 3rem;
+                                        color: #eee;
+                                        text-transform: uppercase;
+                                    }
+ */                                   
+
+                                    h1{
+                                    color:#fff;
+                                    margin-bottom:70px;
+                                    font-size:45px;
+                                    letter-spacing:2px;
+                                    text-align: center;
+                                    }
+
+                                    .search-field {
+                                        height:50px;
+                                        padding:10px;
+                                        border: none;
+                                        border-radius: 25px;
+                                    }
+                                    .business{
+                                    width:400px;
+                                    }
+                                    .location{
+                                    width:200px;
+                                    }
+
+                                    .form-box
+                                    {
+                                    background:rgba(0,0,0,0.5);
+                                    padding:30px;
+                                    display: block;
+                                    }
+
+        /*Responsive cas*/
+
+
+
+        @media screen and (max-width: 414px ){
+
+
+            .text h1 {
+                font-size: 4rem;
+                margin: 2rem 0;
+                
+            }
+        
+            h2, h3 {
+            line-height: 9.2;
+            }
+                
+                }
+        @media screen and (max-width: 320px ){
+            .text {
+                width: 100%;
+                position: absolute;
+                top: 59%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                color: #eee;
+                text-align: center;
+            }
+        }
+
+
+
+
+
+/*////////////////////////////////search///////////////////////////////////////////////////////*/
+
+
+  
+.search-field {
+  
+    height:50px;
+    padding:10px;
+    border: none;
+    border-radius: 25px; 
+
+}
+
+        
+    
+  .business{
+    width: 365px;
+    margin-bottom: 2vh;
+    font-size: 15px;
+    color: #000;
+    font-weight: bold;
+  }
+  .location{
+    width:200px;
+    margin-left: 5px;
+    margin-bottom: 2vh;
+    font-size: 15px;
+    color: #000;
+    font-weight: bold;
+  }
+  .search-btn{
+    height:50px;
+    width:150px;   
+    border:none;
+    color:#fff;
+    border-radius:25px;
+    margin-left: 12px;
+    font-size: 22px;
+    background-color: #03989e;
+    border: 2px solid #03989e;
+    border-radius: 5rem;
+    transition: background-color 650ms;
+    font-family: 'roboto condensed', sans-serif; 
+  }
+
+ 
+  .search-btn:hover{
+    color:#03989e;
+    cursor: pointer;
+    background-color: rgba(0,0,0,0.2);
+  }
+  .form-box1
+  {
+    background:rgba(0,0,0,0.5);
+    padding:30px;
+    display: block;
+    border: 2px solid #03989e;
+    border-radius: 5rem;
+    transition: background-color 650ms;
+
+    
+    
+  }
+  
+
+  @media screen and (max-width: 414px ){
+
+    .text{
+        top: 59%;
+    }
+
+    .business {
+        width: 308px;
+    }
+  }
+
+  @media screen and (max-width: 320px ){
+    .business {
+        width: 284px;
+       
+        margin-left: -11px;
+}
+
+
+
+}
+    
+          
+
+/*////////////////////////////////search///////////////////////////////////////////////////*/
+
+.mm{
+    background: #f2f2f2;
+    padding: 6vh;
+}
+
+
+.text-entreprise h1{
+    color: black;
+    margin: 0px auto 60px;
+    font-size: 56px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    text-align: center;
+    font-family: 'Courgette', cursive;
+    
+}
+
+
+.text-entreprise p{
+    font-size: 2rem;
+    color: #1e1e26;
+    margin-bottom: 40px;
+    letter-spacing: 2px;
+    text-align: center;
+        font-family: 'Courgette', cursive;
+}
+
+
+  .mm h2{
+    color: #a4152c;
+    font-size: 43px;
+    font-weight: bold;
+    margin: 32px 0px 34px 24px;
+    font-family: 'Courgette', cursive;
+  
+  }
+
+  .row{
+    margin-top: 30px;
+  }
+  .logo-entreprise {
+    margin: 6px 0px -18px 138px;
+    height: 127px;
+    border: 6px solid #03989e;
+    border-radius: 0;
+  }
+  
+  .product-bottom h3{
+    color: black;
+    font-size: 26px;
+    font-weight: 500;
+    margin: 36px -4vh 24px 0px;
+    font-family: 'Courgette', cursive;
+  }
+  .learn-btn{
+    height:42px;
+    width:145px;   
+    border:none;
+    color:#fff;
+    border-radius:25px;
+    margin: -11px -36px 100px 0px;
+    font-size: 20px;
+    font-weight: bold;
+    background-color: #03989e;
+    border: 2px solid #03989e;
+    border-radius: 5rem;
+    transition: background-color 650ms;
+    font-family: "ITC Caslon No 224",serif;
+   
+  }
+
+ 
+  .learn-btn:hover{
+    color:#1e1e26;
+    cursor: pointer;
+    background-color: rgba(0,0,0,0.3);
+  }
+
+  @media screen and (max-width: 620px ){
+
+
+    .text h1 {
+        font-size: 4rem;
+        margin: 2rem 0;
+        
+    }
+
+    h2, h3 {
+    line-height: 9.2;
+    }
+        
+        }
+/********************************************************************************************/
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: "ITC Caslon No 224",serif;
+    font-weight: bold;
+    box-sizing: border-box;
+  }
+.services-section{
+    background: url(../img/bg.jpg);
+    background-size: cover;
+    padding: 60px 0;
+    
+  }
+  .inner-width{
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+    padding: 0 20px;
+    overflow: hidden;
+  }
+
+  .section-title{
+    font-family: 'Allura', cursive;
+    text-align: center;
+    color: #f2f2f2;
+    margin-bottom: 0;
+    font-size: 60px;
+    font-weight: bold;
+  }
+  .border{
+    width: 227px;
+    height: 2px;
+    background: #82ccdd;
+    margin: 15px auto;
+  }
+  .services-container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .service-box{
+    max-width: 33.33%;
+    padding: 10px;
+    text-align: center;
+    color: #ddd;
+    cursor: pointer;
+  }
+  
+  .service-icon{
+    display: inline-block;
+    width: 70px;
+    height: 70px;
+    border: 3px solid #82ccdd;
+    color: #82ccdd;
+    transform: rotate(45deg);
+    margin-bottom: 30px;
+    margin-top: 16px;
+    transition: 0.3s linear;
+  }
+  .service-icon i{
+    line-height: 70px;
+    transform: rotate(-45deg);
+    font-size: 26px;
+  }
+  .service-box:hover .service-icon{
+    background: #82ccdd;
+    color: #ddd;
+  }
+  .service-title{
+    color: #03989e;
+    font-size: 24px;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    font-family: "ITC Caslon No 224",serif;
+  }
+  .service-desc{
+    font-size: 19px;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    color: #f2f2f2;
+    font-family: "ITC Caslon No 224",serif;
+  }
+  
+  @media screen and (max-width:960px) {
+    .service-box{
+      max-width: 45%;
+    }
+  }
+  
+  @media screen and (max-width:768px) {
+    .service-box{
+      max-width: 50%;
+    }
+  }
+  
+  @media screen and (max-width:480px) {
+    .service-box{
+      max-width: 100%;
+    }
+  }
+
+
+/******************our team****************/
+
+
+.wrapper{
+    background: #a4152c;
+    font-family: 'Josefin Sans', sans-serif;
+    padding: 92px 0;
+    margin-top: 0px;
+  }
+
+.wrapper h1{
+  font-family: 'Courgette', cursive;
+  font-size: 56px;
+  font-weight: bold;
+  margin-bottom: 29px;
+  text-align: center;
+  margin-top: -6vh;
+}
+
+.team{
+  display: flex;
+  justify-content: center;
+  width: auto;
+  text-align: center;
+  flex-wrap: wrap;
+}
+
+.team .team_member{
+  background: #1e1e26;
+  margin: 59px;
+  margin-bottom: 0;
+  width: 300px;
+  padding: 20px;
+  line-height: 20px;
+  color: #8e8b8b;  
+  position: relative;
+  border-radius: 18px; 
+}
+
+.team .team_member h3{
+  color: #a4152c;
+  font-size: 32px;
+  margin-top: 45px;
+  font-weight: bold;
+}
+.role {
+    color: #03989e;
+    font-size: 29px;
+    font-weight: bold;
+    font-family: "ITC Caslon No 224",serif;
+    margin: 13px auto 51px;
+}
+.team-role p {
+    color: #fff;
+    font-size: 22px;
+    font-weight: bold;
+    font-family: "ITC Caslon No 224",serif;
+    margin-bottom: 32px;
+}
+
+.team .team_member .team_img{
+  position: absolute;
+  top: -50px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background: #a4152c;
+}
+
+.team .team_member .team_img img{
+  width: 100px;
+  height: 100px;
+  margin-left: 0;
+}
+
+.color-team{
+    color: #a4152c;
+    font-size: 24px;
+    font-family: "ITC Caslon No 224",serif;
+    font-weight: bolder;
+}
+
+                        /*foooooooooooooooooooooooooooooooooooooooooooooooooooooooooooottttttttttteeeeeeer*/
+   
+.row p{
+    color: #999;
+    line-height: 25px;
+}
+
+.row h2,h3{
+    color:#fff;
+    display: block;
+    margin-top: 0px;
+    line-height: 1.2;
+    margin-bottom: 12px;
+    text-rendering: optimizeLegibility;
+    color: #202020;
+    font-family: "ITC Caslon No 224",serif;
+    font-weight: 939;
+    font-style: normal;
+    text-transform: initial;
+    letter-spacing: 0px;
+}
+
+.footer-top h2{
+    font-size:24px;
+}
+
+.footer-top{
+    background: #111;
+    padding: 50px 0px 12px 0px;
+    width: 100%;
+}
+
+.segment-one img {
+    margin: -117px 0px -121px -49px;
+    font-size: 3rem;
+    height: 327px;
+    width: 372px;
+}
+
+.segment-one h3{
+    font-family: 'Courgette', cursive;
+    color: #fff;
+    letter-spacing: 4px;
+    margin: 13px 0 2px;
+
+}
+.segment-one p {
+    color: #999;
+    line-height: 25px;
+}
+
+.segment-two h2{
+    color: #fff;
+    font-family: 'Poppins';
+    text-transform: uppercase;
+}
+
+.segment-two h2:before{
+content: '|';
+color: #a4152c;
+padding-right: 10px;
+}
+
+.segment-two ul{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.segment-two ul li{
+    border-bottom: 1px solid rgba(255,255,255,0.3);
+    line-height: 40px;
+}
+
+.segment-two ul li a{
+    color: #999;
+    text-decoration: none;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.segment-three h2{
+    color: #fff;
+    font-family: 'Poppins';
+    text-transform: uppercase;
+}
+
+.segment-three h2:before{
+    content: '|';
+    color: #a4152c;
+    padding-right: 10px;
+}
+
+.segment-three a{
+    background: #494848;
+    width:40px;
+    display: inline-block;
+    border-radius: 50%;
+    margin-left: 15px;
+    margin-top: 8px;
+}
+
+.segment-three a i{
+    font-size: 20px;
+    color: #fff;
+    padding: 10px 12px;
+    
+}
+.segment-four p{
+    font-family: 'Courgette', cursive;
+    color: #fff;
+    letter-spacing: 3px;
+    margin: 10px 0;
+
+}
+
+.segment-four h2{
+    color: #fff;
+    font-family: "Poppins";
+    text-transform: uppercase;
+}
+
+.segment-four h2:before{
+    content: '|';
+    color: #a4152c;
+    padding-right: 10px;
+}
+
+ .segment-four form input[type=email] {
+    border: 2px solid #f2f2f2;
+    border-radius: 2px;
+    padding: 2px 0px;
+    font-size: 2vh;
+    line-height: 0.5;
+}
+
+ .subnew {
+    height: 26px;
+    width: 118px;
+    color: #fff;
+    margin: 11px -67px 0px -4px;
+    font-size: 16px;
+    background-color: #03989e;
+    border: 2px solid #03989e;
+    transition: background-color 650ms;
+}
+
+ 
+  .segment-four .newsletter__submit:hover{
+    color:#fff;
+    cursor: pointer;
+    background-color: rgba(0,0,0,0.3);
+  }
+
+.Newlettre1{
+    display: table-cell;
+    vertical-align: middle;
+    margin: 0;
+}
+
+
+
+.footer-bottom-text{
+    text-align: center;
+    background: #000;
+    line-height: 75px;
+    margin-top: 30px;
+    color: #fff;
+    font-family: 'Courgette', cursive;
+    font-size: 1.9vh;
+}
+.footer-bottom-logo{
+    font-family: "ITC Caslon No 224",serif;
+    font-size: 2.1vh;
+}
+.inputt input{
+    width: 80%;
+    margin-top: 20px;
+    margin-left: 5%;
+    border-radius: 25px;
+}
+.inputt textarea{
+    width: 80%;
+    margin-left: 5%;
+    border-radius: 25px;
+}
+.cc a, .btnadd{
+    color: white;
+    font-family: 'Courgette', cursive;
+    
+}
+.titredd{
+    font-family: 'Courgette', cursive; 
+}
+
+
+/*Responsive cas*/
+@media only screen and (min-width: 768px) and (max-width: 991px){
+    .md-mb-30{
+        margin-bottom: 30px;
+    }
+
+}
+
+
+@media only screen and (max-width: 1010px){
+
+    .sm-mb-30{
+        margin-bottom: 30px;
+    }
+
+    .footer-top{
+        margin: 0px;
+    }
+
+
+}
+                      /*foooooooooooooooooooooooooooooooooooooooooooooooooooooooooooottttttttttteeeeeeer*/
