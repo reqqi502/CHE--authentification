@@ -26,34 +26,33 @@ app.use(routeajoutelogdata);
  app.use(routeajoutentreprise);
  app.use(routeajoutdepartement);
                      
-                                                        app.post('/login',urlencodedParser ,function(req,res){
-                                                          var emails = req.body.email;
-                                                              passwords =req.body.password;
-                                                                  console.log(emails);
-                                                                  console.log(passwords);
-                                                          
-                                                                  fs.readFile('login.json', 'utf8', (err,data) => {     
-                                                                    var data = JSON.parse(data);
+                                               
+ app.post('/login',urlencodedParser ,function(req,res){
+  var emails = req.body.email;
+      passwords =req.body.password;
+          console.log(emails);
+          console.log(passwords);
+  
+          fs.readFile('login.json', 'utf8', (err,data) => {     
+            var data = JSON.parse(data);
 
-                                                                var i;
-                                                                for( i=0 ; i < data.length ; i++){
-                                                                  console.log(data[i].email);
-                                                                  console.log(data[i].password);
+         var i;
+         for( i=0 ; i < data.length ; i++){
+           console.log(data[i].email);
+           console.log(data[i].password);
 
-                                                                    if(data[i].email== emails && data[i].password == passwords){
-                                                                    
-                                                                      //object : mol return 
-                                                                      return res.redirect("reservations.html");
-                                                                      
+            if(data[i].email== emails && data[i].password == passwords){
+            
+              //object : mol return 
+              return res.redirect("entreprises.html");
+              
 
-                                                                    }else{
-                                                                        console.log('error oooooooops !!!');
-                                                                    }
-                                                                    }
-                                                                    })
-                                                                  });
-
-                                                                    // Send Data to file json 
+            }else{
+                console.log('error oooooooops !!!');
+            }
+            }
+            })
+          });
 
 
 
