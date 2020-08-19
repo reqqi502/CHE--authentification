@@ -26,7 +26,12 @@ app.use(routeajoutelogdata);
  app.use(routeajoutentreprise);
  app.use(routeajoutdepartement);
                      
-                                               
+     app.post('/signin', (req, res) => {
+                                            
+                                            if (res){
+                                            res.redirect('/index.html');
+                                            };
+                                            });                                            
  app.post('/login',urlencodedParser ,function(req,res){
   var emails = req.body.email;
       passwords =req.body.password;
